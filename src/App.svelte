@@ -73,17 +73,3 @@
 		<p>Please add some contacts.</p>
 	{/each}
 {/if}
-
-<!-- {#each createdContacts as contact}
-{#if formState === "done"}
-	<ContactCard 
-		userName={contact.name} 
-		jobTitle={contact.title} 
-		description={contact.description}
-		userImage={contact.image} />
-{:else if formState === "invalid"}
-	<p>The input is invalid!</p>
-{:else}
-	<p>Please enter some data and hit Submit!</p>
-{/if}
-{/each} -->
