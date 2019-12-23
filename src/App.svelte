@@ -53,7 +53,7 @@
 	<li><a href="./Assignment2.svelte">Assignment2</a></li>
 </ul>
 
-<div id="form">
+<form id="form">
   <div class="form-control">
     <label for="userName">User Name</label>
     <input type="text" bind:value={name} id="userName" />
@@ -70,11 +70,10 @@
     <label for="desc">Description</label>
     <textarea rows="3" bind:value={description} id="desc" />
   </div>
-</div>
-
-<button on:click={addContactCard}>Submit</button>
-<button on:click={deleteFirst}>Delete First Contact</button>
-<button on:click={deleteLast}>Delete Last Contact</button>
+	<button type="submit" on:click|preventDefault={addContactCard}>Submit</button> <!-- This modifier has to be used in the form-->
+	<button on:click|preventDefault={deleteFirst}>Delete First Contact</button>
+	<button on:click|preventDefault={deleteLast}>Delete Last Contact</button>
+</form>
 
 {#if formState === "invalid"}
 	<p>The input is invalid!</p>
@@ -93,4 +92,4 @@
 	<p>Please add some contacts.</p>
 {/each}
 
-<Assignment2 />
+<!-- <Assignment2 /> -->
